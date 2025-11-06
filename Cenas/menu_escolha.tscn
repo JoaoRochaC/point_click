@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://c84ngohbfb1of"]
+
+[ext_resource type="Script" uid="uid://kix2ub507evc" path="res://Scripts/menu_escolha.gd" id="1_ai048"]
+[ext_resource type="Texture2D" uid="uid://bemx657t5xda1" path="res://Assets/New Piskel.png" id="1_t46p7"]
+
+[node name="MenuEscolha" type="CanvasGroup"]
+script = ExtResource("1_ai048")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(850.5, 416)
+scale = Vector2(1.87, 9.2)
+texture = ExtResource("1_t46p7")
+
+[node name="sair" type="Button" parent="."]
+z_index = 2
+offset_left = 757.0
+offset_top = 464.0
+offset_right = 945.0
+offset_bottom = 503.0
+mouse_default_cursor_shape = 2
+text = "SAIR
+"
+
+[node name="Interagir" type="Button" parent="."]
+z_index = 2
+offset_left = 757.0
+offset_top = 329.0
+offset_right = 942.0
+offset_bottom = 364.0
+mouse_default_cursor_shape = 2
+text = "INTERAGIR
+"
+
+[node name="falar" type="Button" parent="."]
+z_index = 2
+offset_left = 757.0
+offset_top = 379.0
+offset_right = 942.0
+offset_bottom = 411.0
+text = "Falar"
+
+[node name="observar" type="Button" parent="."]
+z_index = 2
+offset_left = 758.0
+offset_top = 423.0
+offset_right = 944.0
+offset_bottom = 455.0
+text = "OBSERVAR
+"
+
+[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="Interagir" to="." method="_on_interagir_pressed"]
+[connection signal="pressed" from="falar" to="." method="_on_falar_pressed"]
+[connection signal="pressed" from="observar" to="." method="_on_observar_pressed"]
