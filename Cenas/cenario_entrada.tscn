@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://4pbhor3yd3jv" path="res://Cenas/chave.tscn" id="7_klstr"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ba8gi"]
-vertices = PackedVector2Array(743.102, 449.203, 742.102, 347.211, 967, 351.797, 967, 530.023, 20.8516, 531.969, 322.641, 440.82, 18.1484, 349.094, 316.641, 351.906)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(5, 4, 6, 7)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(8, 339, 326, 342, 332, 431, 733, 439, 732, 337, 977, 342, 977, 540, 11, 542)])
+vertices = PackedVector2Array(381.9375, 165.96094, 382.78125, 125.3125, 517, 129.67188, 517, 239.03125, -85, 127.09375, 99.78125, 128.89844, 98.96875, 168.24219, -85, 240.96094, 104.35156, 187.96875, 367.53125, 189.02344)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 6, 8), PackedInt32Array(3, 7, 8, 9), PackedInt32Array(0, 3, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-95, 117, 110, 119, 109, 167, 112, 178, 362, 179, 372, 163, 373, 115, 527, 120, 527, 249, -95, 251)])
 
 [node name="CenarioEntrada" type="Control"]
 layout_mode = 3
@@ -18,13 +18,13 @@ anchors_preset = 0
 script = ExtResource("1_ck06y")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." groups=["navigation"]]
-position = Vector2(3, -18)
+position = Vector2(101, 106)
 navigation_polygon = SubResource("NavigationPolygon_ba8gi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(497, 259)
-scale = Vector2(0.477161, 0.246603)
+position = Vector2(318, 182.18759)
+scale = Vector2(0.3078339, 0.1601562)
 texture = ExtResource("1_x46of")
 
 [node name="Line2D" type="Line2D" parent="."]
@@ -32,7 +32,7 @@ z_index = 1
 default_color = Color(0, 0, 0.980392, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_ck06y")]
-position = Vector2(42, 399)
+position = Vector2(82, 334)
 
 [node name="InteractionObject" type="Area2D" parent="."]
 z_index = -1
@@ -40,10 +40,10 @@ position = Vector2(200, 502)
 script = ExtResource("4_w66is")
 
 [node name="porta" parent="InteractionObject" instance=ExtResource("6_necdm")]
-position = Vector2(-41, -37)
+position = Vector2(-64, -168)
 
 [node name="chave" parent="InteractionObject" instance=ExtResource("7_klstr")]
-position = Vector2(312, -22)
+position = Vector2(355, -171)
 
 [connection signal="input_event" from="InteractionObject" to="." method="_on_interaction_object_input_event"]
 [connection signal="mouse_entered" from="InteractionObject" to="InteractionObject" method="_on_mouse_entered"]

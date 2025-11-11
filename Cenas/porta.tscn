@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://ca177yxcegjch" path="res://icon.svg" id="2_ilbgv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w66is"]
-size = Vector2(102, 94)
+size = Vector2(32.625, 27.53125)
 
 [node name="porta" type="CollisionShape2D"]
 shape = SubResource("RectangleShape2D_w66is")
 script = ExtResource("1_mpfdb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2, 2)
-scale = Vector2(0.632813, 0.601563)
+position = Vector2(0.3125, -0.23437497)
+scale = Vector2(0.1855471, 0.18408225)
 texture = ExtResource("2_ilbgv")
 
 [node name="Marker2D" type="Marker2D" parent="."]

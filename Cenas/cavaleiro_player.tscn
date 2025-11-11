@@ -124,8 +124,8 @@ animations = [{
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" groups=["player"]]
-position = Vector2(-26, -33)
-scale = Vector2(3, 2.94444)
+position = Vector2(-9.536743e-07, 6.999999)
+scale = Vector2(0.81500006, 0.8760656)
 sprite_frames = SubResource("SpriteFrames_d2hni")
 animation = &"move"
 autoplay = "idle"

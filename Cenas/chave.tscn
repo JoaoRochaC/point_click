@@ -4,15 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://ca177yxcegjch" path="res://icon.svg" id="2_feoru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_necdm"]
-size = Vector2(71.5, 71.5)
+size = Vector2(38.75, 35.75)
 
 [node name="chave" type="CollisionShape2D"]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_necdm")
 script = ExtResource("1_qi3ol")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.25, 0.25)
-scale = Vector2(0.5625, 0.539063)
+position = Vector2(0.375, -0.12499809)
+scale = Vector2(0.24804688, 0.23771179)
 texture = ExtResource("2_feoru")
 
 [node name="Marker2D" type="Marker2D" parent="."]
