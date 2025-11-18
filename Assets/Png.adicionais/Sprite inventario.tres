@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://xp31qaf7ed50"]
+
+[ext_resource type="Texture2D" uid="uid://bg000ib6kt6t0" path="res://Assets/UIBundleFree/UIBundleFree/MediavelFree.png" id="1_6nved"]
+
+[resource]
+atlas = ExtResource("1_6nved")
+region = Rect2(3.04825, 0.831394, 71.711, 92.9159)

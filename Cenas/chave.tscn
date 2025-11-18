@@ -1,20 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://4pbhor3yd3jv"]
 
 [ext_resource type="Script" uid="uid://chiranof537fc" path="res://Scripts/Interaction/chave.gd" id="1_qi3ol"]
-[ext_resource type="Texture2D" uid="uid://ca177yxcegjch" path="res://icon.svg" id="2_feoru"]
+[ext_resource type="Texture2D" uid="uid://d3drydvw0waw2" path="res://Assets/Png.adicionais/Chave_objeto.tres" id="2_qi3ol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_necdm"]
-size = Vector2(38.75, 35.75)
+size = Vector2(22, 13.5)
 
-[node name="chave" type="CollisionShape2D"]
-position = Vector2(-1, 0)
+[node name="chave" type="CollisionShape2D" node_paths=PackedStringArray("_hud")]
+z_index = -2
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_necdm")
 script = ExtResource("1_qi3ol")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.375, -0.12499809)
-scale = Vector2(0.24804688, 0.23771179)
-texture = ExtResource("2_feoru")
+_hud = NodePath("CanvasLayer")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(2.25, 37.25)
+position = Vector2(0, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(-0.5, -0.75)
+scale = Vector2(1.49176, 1.7197)
+texture = ExtResource("2_qi3ol")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

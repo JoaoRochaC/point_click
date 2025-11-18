@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://vv8i6unrlqlt"]
+
+[ext_resource type="Script" uid="uid://6553tvws56e0" path="res://Scripts/npc_do_martelo.gd" id="1_fwhj0"]
+[ext_resource type="Texture2D" uid="uid://c4xj6x4mf6j5x" path="res://Assets/SATYR_sprite_sheet/SPRITE_SHEET.png" id="2_b8h5a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sq6s"]
+size = Vector2(19, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u03a"]
+atlas = ExtResource("2_b8h5a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duoav"]
+atlas = ExtResource("2_b8h5a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djp3l"]
+atlas = ExtResource("2_b8h5a")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58c2p"]
+atlas = ExtResource("2_b8h5a")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jsov"]
+atlas = ExtResource("2_b8h5a")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_da7ni"]
+atlas = ExtResource("2_b8h5a")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_peu6t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0u03a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duoav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djp3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58c2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jsov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_da7ni")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Npc_Do_Martelo" type="CollisionShape2D" node_paths=PackedStringArray("_hud")]
+z_index = 10
+y_sort_enabled = true
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_8sq6s")
+script = ExtResource("1_fwhj0")
+_hud = NodePath("HUD")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_peu6t")
+autoplay = "default"
+frame_progress = 0.743443
+offset = Vector2(-2, -11)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 14)
+
+[node name="HUD" type="CanvasLayer" parent="."]

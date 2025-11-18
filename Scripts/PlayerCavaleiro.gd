@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-var tem_chave: bool = false
+#var tem_chave: bool = false
 var menu_aberto: bool = false
 
 var destino = Vector2()
@@ -77,9 +77,9 @@ func move_along_path(distance):
 			pass
 
 func interact(delta):
-	if !menu_aberto: 
+	if !menu_aberto:
 		var menu = preload("res://Cenas/menu_escolha.tscn").instantiate()
-		menu.name = "MenuEscolha"
+		#menu.name = "MenuEscolha"
 		get_tree().root.add_child(menu)
 		menu_aberto = true
 		menu.connect("menu_closed", Callable(self, "_on_menu_closed"))

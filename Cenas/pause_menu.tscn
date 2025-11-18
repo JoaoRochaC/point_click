@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://brqfnodr3q4sr"]
+
+[ext_resource type="Script" uid="uid://cojxe50nw3ko8" path="res://Cenas/pause_menu.gd" id="1_ddlpt"]
+[ext_resource type="Theme" uid="uid://drfdd3id2he27" path="res://new_theme.tres" id="1_idnuk"]
+[ext_resource type="PackedScene" uid="uid://bnykersri4kki" path="res://Cenas/inventory.tscn" id="3_dokru"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ddlpt"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_dokru"]
+events = [SubResource("InputEventAction_ddlpt")]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_ddlpt")
+
+[node name="bg_overlay" type="ColorRect" parent="."]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.188235)
+
+[node name="menu_holder" type="VBoxContainer" parent="."]
+process_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -160.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="pause_btn" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme = ExtResource("1_idnuk")
+shortcut = SubResource("Shortcut_dokru")
+text = "RESUME"
+
+[node name="quit_btn" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme = ExtResource("1_idnuk")
+text = "QUIT GAME"
+
+[node name="Inventory" parent="." instance=ExtResource("3_dokru")]
+
+[connection signal="pressed" from="menu_holder/pause_btn" to="." method="_on_pause_btn_pressed"]
+[connection signal="pressed" from="menu_holder/quit_btn" to="." method="_on_quit_btn_pressed"]

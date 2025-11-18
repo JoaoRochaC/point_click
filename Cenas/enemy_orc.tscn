@@ -1,0 +1,125 @@
+[gd_scene load_steps=16 format=3 uid="uid://n8cp37yu78px"]
+
+[ext_resource type="Texture2D" uid="uid://bvtkewcamc2gy" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc.png" id="1_fei4b"]
+[ext_resource type="Script" uid="uid://fm0hdefiedjo" path="res://Scripts/enemy_orc.gd" id="1_ym5b1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ym5b1"]
+size = Vector2(13.275, 8.325)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym5b1"]
+atlas = ExtResource("1_fei4b")
+region = Rect2(0, 500, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miwqr"]
+atlas = ExtResource("1_fei4b")
+region = Rect2(100, 500, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b33ys"]
+atlas = ExtResource("1_fei4b")
+region = Rect2(200, 500, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21gyy"]
+atlas = ExtResource("1_fei4b")
+region = Rect2(300, 500, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnr5s"]
+atlas = ExtResource("1_fei4b")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_516ea"]
+atlas = ExtResource("1_fei4b")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adtn5"]
+atlas = ExtResource("1_fei4b")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvi0n"]
+atlas = ExtResource("1_fei4b")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bns1i"]
+atlas = ExtResource("1_fei4b")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dwgp"]
+atlas = ExtResource("1_fei4b")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh5cy"]
+atlas = ExtResource("1_fei4b")
+region = Rect2(300, 500, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_miwqr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym5b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miwqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b33ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21gyy")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnr5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_516ea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adtn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvi0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bns1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dwgp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh5cy")
+}],
+"loop": true,
+"name": &"jamorreu",
+"speed": 5.0
+}]
+
+[node name="Enemy_orc" type="CollisionShape2D" node_paths=PackedStringArray("_hud")]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_ym5b1")
+script = ExtResource("1_ym5b1")
+_hud = NodePath("CanvasLayer")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.2, 1.0375)
+sprite_frames = SubResource("SpriteFrames_miwqr")
+animation = &"dead"
+offset = Vector2(0.625, -6.925)
+flip_h = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-35, 0)
+
+[node name="NavigationLink2D" type="NavigationLink2D" parent="."]
+position = Vector2(-34.6, -0.2)
+enabled = false
+start_position = Vector2(26, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

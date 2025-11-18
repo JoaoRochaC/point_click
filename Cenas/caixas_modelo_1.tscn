@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://djuc0mtbefems"]
+
+[ext_resource type="Texture2D" uid="uid://8l2xjvb2cbof" path="res://Assets/Png.adicionais/caixasMutuadas.tres" id="1_la1r5"]
+[ext_resource type="Script" uid="uid://b4d6u5beq8w8m" path="res://Scripts/Interaction/Caixa.gd" id="1_nyv63"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyv63"]
+size = Vector2(7, 8)
+
+[node name="Caixas_Modelo1" type="CollisionShape2D" node_paths=PackedStringArray("_hud")]
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_nyv63")
+script = ExtResource("1_nyv63")
+_hud = NodePath("CanvasLayer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 9.53674e-07)
+scale = Vector2(0.257576, 0.22973)
+texture = ExtResource("1_la1r5")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(3.625, -3.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://hkn84cenw8p2"]
+
+[ext_resource type="Texture2D" uid="uid://bvtkewcamc2gy" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc.png" id="1_p5373"]
+[ext_resource type="Script" uid="uid://d0q1kg04m3qov" path="res://Scripts/TemplateEnemy.gd" id="2_r071p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r071p"]
+atlas = ExtResource("1_p5373")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg5q2"]
+atlas = ExtResource("1_p5373")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii38g"]
+atlas = ExtResource("1_p5373")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf7kg"]
+atlas = ExtResource("1_p5373")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8lbr"]
+atlas = ExtResource("1_p5373")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k5rr"]
+atlas = ExtResource("1_p5373")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdlx1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r071p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg5q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii38g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf7kg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8lbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k5rr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_775j5"]
+size = Vector2(13, 15.4)
+
+[node name="Inimigo_ponte" type="Area2D"]
+scale = Vector2(5, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pdlx1")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.534294
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.7)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_775j5")
+script = ExtResource("2_r071p")
+
+[node name="Marker2D" type="Marker2D" parent="CollisionShape2D"]
+position = Vector2(-17.3, 4.8)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

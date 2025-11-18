@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu5wa6b3cyf7g"]
+
+[ext_resource type="Script" uid="uid://co8v5y5tesjk5" path="res://Dialog/dialog_screen.gd" id="1_atyf0"]
+[ext_resource type="Texture2D" uid="uid://bdtupg6en1ql4" path="res://Assets/Png.adicionais/Soldier (1).png" id="1_qrkj7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_atyf0"]
+line_spacing = 0.0
+font_size = 22
+shadow_color = Color(0, 0, 0, 0.6)
+
+[node name="DialogScreen" type="Control" node_paths=PackedStringArray("_name", "_dialog", "_faceset")]
+custom_minimum_size = Vector2(600, 140)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -170.0
+offset_right = 300.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_atyf0")
+_name = NodePath("BackGround/HBoxContainer/VBoxContainer/name")
+_dialog = NodePath("BackGround/HBoxContainer/VBoxContainer/Dialog")
+_faceset = NodePath("BackGround/HBoxContainer/Border/FaceSet")
+
+[node name="BackGround" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BackGround"]
+custom_minimum_size = Vector2(588, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -64.0
+offset_right = 294.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Border" type="ColorRect" parent="BackGround/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="FaceSet" type="TextureRect" parent="BackGround/HBoxContainer/Border"]
+custom_minimum_size = Vector2(110, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -60.0
+offset_right = 55.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qrkj7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackGround/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="name" type="Label" parent="BackGround/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Cavaleiro"
+label_settings = SubResource("LabelSettings_atyf0")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Dialog" type="RichTextLabel" parent="BackGround/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/table_v_separation = 1
+theme_override_constants/table_h_separation = 1
+theme_override_font_sizes/normal_font_size = 22
+text = "asdasd"

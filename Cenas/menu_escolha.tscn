@@ -1,55 +1,58 @@
 [gd_scene load_steps=3 format=3 uid="uid://c84ngohbfb1of"]
 
 [ext_resource type="Script" uid="uid://kix2ub507evc" path="res://Scripts/menu_escolha.gd" id="1_ai048"]
-[ext_resource type="Texture2D" uid="uid://bemx657t5xda1" path="res://Assets/New Piskel.png" id="1_t46p7"]
+[ext_resource type="Texture2D" uid="uid://dp12sc17cwbi5" path="res://Assets/Png.adicionais/new_atlas_texture.tres" id="2_ai048"]
 
 [node name="MenuEscolha" type="CanvasGroup"]
+z_index = 100
+position = Vector2(429, 236)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ai048")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(850.5, 416)
-scale = Vector2(1.87, 9.2)
-texture = ExtResource("1_t46p7")
+position = Vector2(849, 415.5)
+scale = Vector2(5.67347, 3.37037)
+texture = ExtResource("2_ai048")
 
-[node name="sair" type="Button" parent="."]
-z_index = 2
-offset_left = 757.0
-offset_top = 464.0
-offset_right = 945.0
-offset_bottom = 503.0
-mouse_default_cursor_shape = 2
-text = "SAIR
-"
+[node name="HBoxContainer" type="HBoxContainer" parent="Sprite2D"]
+offset_left = -17.4496
+offset_top = -31.3022
+offset_right = 73.5504
+offset_bottom = 104.698
+scale = Vector2(0.371746, 0.457572)
 
-[node name="Interagir" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprite2D/HBoxContainer"]
+layout_mode = 2
+
+[node name="Interagir" type="Button" parent="Sprite2D/HBoxContainer/VBoxContainer"]
 z_index = 2
-offset_left = 757.0
-offset_top = 329.0
-offset_right = 942.0
-offset_bottom = 364.0
+layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "INTERAGIR
 "
 
-[node name="falar" type="Button" parent="."]
+[node name="observar" type="Button" parent="Sprite2D/HBoxContainer/VBoxContainer"]
 z_index = 2
-offset_left = 757.0
-offset_top = 379.0
-offset_right = 942.0
-offset_bottom = 411.0
-text = "Falar"
-
-[node name="observar" type="Button" parent="."]
-z_index = 2
-offset_left = 758.0
-offset_top = 423.0
-offset_right = 944.0
-offset_bottom = 455.0
+layout_mode = 2
+mouse_default_cursor_shape = 2
 text = "OBSERVAR
 "
 
-[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]
-[connection signal="pressed" from="Interagir" to="." method="_on_interagir_pressed"]
-[connection signal="pressed" from="falar" to="." method="_on_falar_pressed"]
-[connection signal="pressed" from="observar" to="." method="_on_observar_pressed"]
+[node name="falar" type="Button" parent="Sprite2D/HBoxContainer/VBoxContainer"]
+z_index = 2
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Falar"
+
+[node name="sair" type="Button" parent="Sprite2D/HBoxContainer/VBoxContainer"]
+z_index = 2
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "SAIR
+"
+
+[connection signal="pressed" from="Sprite2D/HBoxContainer/VBoxContainer/Interagir" to="." method="_on_interagir_pressed"]
+[connection signal="pressed" from="Sprite2D/HBoxContainer/VBoxContainer/observar" to="." method="_on_observar_pressed"]
+[connection signal="pressed" from="Sprite2D/HBoxContainer/VBoxContainer/falar" to="." method="_on_falar_pressed"]
+[connection signal="pressed" from="Sprite2D/HBoxContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]

@@ -11,25 +11,28 @@ config_version=5
 [application]
 
 config/name="PointAndClick"
-run/main_scene="uid://cfb1oqnlautbf"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+run/main_scene="uid://bnk2bwytofhdc"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Scripts/Global/Global.gd"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/size/window_width_override=960
+window/size/window_height_override=540
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
-mouse_cursor/custom_image="uid://d28hcg2v763oj"
+mouse_cursor/custom_image="uid://d3wscl5r5vc0v"
 
 [global_group]
 
 navigation=""
-player=""
 
 [input]
 

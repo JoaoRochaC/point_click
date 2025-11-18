@@ -1,16 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfb1oqnlautbf"]
+[gd_scene load_steps=9 format=3 uid="uid://cfb1oqnlautbf"]
 
 [ext_resource type="Script" uid="uid://c86yhhdxibkr0" path="res://Scripts/cenario_entrada.gd" id="1_ck06y"]
-[ext_resource type="Texture2D" uid="uid://blqq2x2wqk8c3" path="res://Assets/cenario teste.png" id="1_x46of"]
+[ext_resource type="Texture2D" uid="uid://blqq2x2wqk8c3" path="res://Assets/Png.adicionais/cenario teste.png" id="1_x46of"]
 [ext_resource type="PackedScene" uid="uid://fv3cpbr73pv7" path="res://Cenas/cavaleiro_player.tscn" id="2_ck06y"]
-[ext_resource type="Script" uid="uid://diim6smf8ggc7" path="res://Scripts/Interaction/interaction_object.gd" id="4_w66is"]
-[ext_resource type="PackedScene" uid="uid://bytcl7ylr6vkl" path="res://Cenas/porta.tscn" id="6_necdm"]
+[ext_resource type="PackedScene" uid="uid://b76b2jm0aqsfb" path="res://Cenas/interaction_template.tscn" id="4_klstr"]
 [ext_resource type="PackedScene" uid="uid://4pbhor3yd3jv" path="res://Cenas/chave.tscn" id="7_klstr"]
+[ext_resource type="PackedScene" uid="uid://djuc0mtbefems" path="res://Cenas/caixas_modelo_1.tscn" id="7_necdm"]
+[ext_resource type="PackedScene" uid="uid://dl4akaat47ivm" path="res://Cenas/botao_escondido.tscn" id="8_rwsju"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ba8gi"]
-vertices = PackedVector2Array(381.9375, 165.96094, 382.78125, 125.3125, 517, 129.67188, 517, 239.03125, -85, 127.09375, 99.78125, 128.89844, 98.96875, 168.24219, -85, 240.96094, 104.35156, 187.96875, 367.53125, 189.02344)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 6, 8), PackedInt32Array(3, 7, 8, 9), PackedInt32Array(0, 3, 9)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-95, 117, 110, 119, 109, 167, 112, 178, 362, 179, 372, 163, 373, 115, 527, 120, 527, 249, -95, 251)])
+vertices = PackedVector2Array(728, 244, 728, 212, 840, 212, 840, 300, 728, 300, 728, 268, 616, 244, 616, 268, 616, 300, 262, 300, 709.492, 358, 744, 358, 744, 396, 216, 396, 704.492, 354, 636.141, 358, 216, 359, 252, 359, 252, 300, 10, 300, 10, 212, 616, 212, 262, 358, 640.141, 354)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5), PackedInt32Array(0, 3, 5), PackedInt32Array(6, 0, 5, 7), PackedInt32Array(7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 10, 13, 15), PackedInt32Array(13, 16, 17), PackedInt32Array(18, 19, 20, 21, 6), PackedInt32Array(18, 6, 7, 9), PackedInt32Array(18, 9, 22, 17), PackedInt32Array(15, 23, 14), PackedInt32Array(22, 15, 13, 17)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 310, 242, 310, 242, 349, 206, 349, 206, 406, 754, 406, 754, 348, 713, 348, 708, 344, 636, 344, 632, 348, 272, 348, 272, 350, 272, 310, 626, 310, 626, 278, 718, 278, 718, 310, 850, 310, 850, 202, 718, 202, 718, 234, 626, 234, 626, 202, 0, 202)])
 
 [node name="CenarioEntrada" type="Control"]
 layout_mode = 3
@@ -23,28 +24,26 @@ navigation_polygon = SubResource("NavigationPolygon_ba8gi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(318, 182.18759)
-scale = Vector2(0.3078339, 0.1601562)
+position = Vector2(483.313, 271.188)
+scale = Vector2(0.470223, 0.240772)
 texture = ExtResource("1_x46of")
 
 [node name="Line2D" type="Line2D" parent="."]
 z_index = 1
 default_color = Color(0, 0, 0.980392, 1)
 
-[node name="Player" parent="." instance=ExtResource("2_ck06y")]
-position = Vector2(82, 334)
+[node name="PLayer_cavaleiro" parent="." instance=ExtResource("2_ck06y")]
+position = Vector2(78, 437)
 
-[node name="InteractionObject" type="Area2D" parent="."]
-z_index = -1
-position = Vector2(200, 502)
-script = ExtResource("4_w66is")
+[node name="InteractionTemplate" parent="." instance=ExtResource("4_klstr")]
 
-[node name="porta" parent="InteractionObject" instance=ExtResource("6_necdm")]
-position = Vector2(-64, -168)
+[node name="chave" parent="InteractionTemplate" instance=ExtResource("7_klstr")]
+position = Vector2(753, 481)
 
-[node name="chave" parent="InteractionObject" instance=ExtResource("7_klstr")]
-position = Vector2(355, -171)
+[node name="Caixas_Modelo1" parent="InteractionTemplate" instance=ExtResource("7_necdm")]
+position = Vector2(270, 398)
 
-[connection signal="input_event" from="InteractionObject" to="." method="_on_interaction_object_input_event"]
-[connection signal="mouse_entered" from="InteractionObject" to="InteractionObject" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="InteractionObject" to="InteractionObject" method="_on_mouse_exited"]
+[node name="Botao_escondido" parent="InteractionTemplate" instance=ExtResource("8_rwsju")]
+position = Vector2(157, 361)
+
+[connection signal="input_event" from="InteractionTemplate" to="." method="_on_interaction_template_input_event"]

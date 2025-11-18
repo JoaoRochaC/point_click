@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dp12sc17cwbi5"]
+
+[ext_resource type="Texture2D" uid="uid://dk86d278g1h8g" path="res://Assets/UIBundleFree/UIBundleFree/UiCozyFree.png" id="1_1ecl5"]
+
+[resource]
+atlas = ExtResource("1_1ecl5")
+region = Rect2(163, 166.5, 49, 81)

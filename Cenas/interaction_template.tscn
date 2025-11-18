@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b76b2jm0aqsfb"]
+
+[ext_resource type="Script" uid="uid://c04ng6cmootut" path="res://Scripts/interaction_template.gd" id="1_k3oik"]
+
+[node name="InteractionTemplate" type="Area2D"]
+script = ExtResource("1_k3oik")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

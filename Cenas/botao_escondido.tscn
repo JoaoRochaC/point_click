@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl4akaat47ivm"]
+
+[ext_resource type="Script" uid="uid://drjyigkcx5s8h" path="res://Scripts/Interaction/Botao_escondido.gd" id="1_qfpaw"]
+[ext_resource type="Texture2D" uid="uid://condrrjrs7muj" path="res://Assets/Png.adicionais/Botao escondido.tres" id="2_yklmo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obi2o"]
+size = Vector2(49.5, 45)
+
+[node name="Botao_escondido" type="CollisionShape2D" node_paths=PackedStringArray("_hud")]
+shape = SubResource("RectangleShape2D_obi2o")
+script = ExtResource("1_qfpaw")
+_hud = NodePath("CanvasLayer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.499998, 1.5)
+scale = Vector2(3.23333, 3.16667)
+texture = ExtResource("2_yklmo")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 56)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

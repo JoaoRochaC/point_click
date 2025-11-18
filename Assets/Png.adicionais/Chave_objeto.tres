@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d3drydvw0waw2"]
+
+[ext_resource type="Texture2D" uid="uid://bvbpqtdye0by5" path="res://Assets/free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Objects.png" id="1_g3you"]
+
+[resource]
+atlas = ExtResource("1_g3you")
+region = Rect2(272.649, 61.7198, 14.5685, 11.6908)

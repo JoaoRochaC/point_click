@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cmdjmhf5it57y"]
+
+[ext_resource type="Texture2D" uid="uid://blyh6wwxtuk47" path="res://Assets/4-Enemy-Big Guy/1-Idle/30.png" id="1_u6gyn"]
+
+[resource]
+atlas = ExtResource("1_u6gyn")
+region = Rect2(0, 0, 63.5, 50.5)

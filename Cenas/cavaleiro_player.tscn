@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://fv3cpbr73pv7"]
 
 [ext_resource type="Script" uid="uid://cwp6aba03wkt4" path="res://Scripts/PlayerCavaleiro.gd" id="1_u0y4s"]
-[ext_resource type="Texture2D" uid="uid://qbvsjv25qhkj" path="res://Assets/Soldier_interacting.png" id="2_80a2x"]
+[ext_resource type="Texture2D" uid="uid://qbvsjv25qhkj" path="res://Assets/Png.adicionais/Soldier_interacting.png" id="2_80a2x"]
 [ext_resource type="Texture2D" uid="uid://b2ka6l8i00apv" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier.png" id="2_u0y4s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8s6vk"]
@@ -123,11 +123,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" groups=["player"]]
-position = Vector2(-9.536743e-07, 6.999999)
-scale = Vector2(0.81500006, 0.8760656)
+[node name="PLayer_cavaleiro" type="AnimatedSprite2D" groups=["player"]]
+z_index = 10
+y_sort_enabled = true
+position = Vector2(0, 7.79059)
+scale = Vector2(2, 2.00487)
 sprite_frames = SubResource("SpriteFrames_d2hni")
-animation = &"move"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.0107032
 offset = Vector2(0, -7)
 script = ExtResource("1_u0y4s")
